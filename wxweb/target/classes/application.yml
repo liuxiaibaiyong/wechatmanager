@@ -1,0 +1,13 @@
+server:
+  port: 8088
+  context-path: /wx
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://127.0.0.1:1433;DatabaseName=BaseCommon  
+    username: sa
+    password: sa
+  jpa:
+    hibernate:
+      ddl-auto: create
+      show-sql: true
