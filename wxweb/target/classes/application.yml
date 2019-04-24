@@ -1,13 +1,24 @@
 server:
   port: 8088
   context-path: /wx
+  session:
+    timeout: 180000
+mybatis:
+  typeAliasesPackage: com.wx.wxweb.entity
+  mapperLocations: classpath:mapper/*.xml
+  
 spring:
   datasource:
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://127.0.0.1:1433;DatabaseName=BaseCommon  
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/wx
     username: sa
     password: sa
   jpa:
     hibernate:
       ddl-auto: create
       show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
